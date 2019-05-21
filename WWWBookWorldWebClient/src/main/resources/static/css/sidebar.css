@@ -1,0 +1,21 @@
+@charset "UTF-8";
+.sidebar {
+	background-color: #1e1e1e; 
+	height: 100%;
+	width: 250px;
+	position: fixed;
+  	z-index: 1;
+  	top: 0;
+  	left: 0;
+  	overflow-x: hidden;
+  	transition: 0.5s;
+}
+
+.sidebar-header {
+	width: 100%;
+}
+
+.closeBtn {
+	right: 0;
+	color: #838383;
+}
