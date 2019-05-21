@@ -2,6 +2,7 @@ package com.lukashman.model;
 
 import java.util.Date;
 
+import com.lukashman.model.addition.WebUserRole;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -25,4 +26,8 @@ public class WebUser {
 	@Getter
 	@Setter
 	private Date registrationDate;
+	
+	@Getter
+	@Setter
+	private WebUserRole role;
 }

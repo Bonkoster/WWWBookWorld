@@ -11,6 +11,8 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.Proxy;
 
+import com.lukashman.model.additional.UserRole;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -35,17 +37,25 @@ public class User {
 	
 	@Column( name = "user_registration_date" )
 	private Date registrationDate;
+	
+	@Column( name = "user_role" )
+	private UserRole userRole;
 
 	public User() {
 	}
 
-	public User(String name, String password, String email, Date registrationDate) {
+	public User(String name, String password, String email, Date registrationDate, UserRole userRole) {
 		this.name = name;
 		this.password = password;
 		this.email = email;
 		this.registrationDate = registrationDate;
+		this.userRole = userRole;
 	}
 
+	public int getId() {
+		return id;
+	}
+	
 	public String getName() {
 		return name;
 	}
@@ -78,7 +88,11 @@ public class User {
 		this.registrationDate = registrationDate;
 	}
 
-	public int getId() {
-		return id;
+	public UserRole getUserRole() {
+		return userRole;
+	}
+
+	public void setUserRole(UserRole userRole) {
+		this.userRole = userRole;
 	}
 }
