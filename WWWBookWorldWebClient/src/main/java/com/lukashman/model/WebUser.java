@@ -2,32 +2,59 @@ package com.lukashman.model;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.lukashman.model.addition.WebUserRole;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-
-@AllArgsConstructor
+@JsonIgnoreProperties("id")
 public class WebUser {
 
-	@Getter
-	@Setter
 	private String name;
 	
-	@Getter
-	@Setter
 	private String password;
 	
-	@Getter
-	@Setter
 	private String email;
 	
-	@Getter
-	@Setter
 	private Date registrationDate;
-	
-	@Getter
-	@Setter
-	private WebUserRole role;
+
+	private WebUserRole userRole;
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public Date getRegistrationDate() {
+		return registrationDate;
+	}
+
+	public void setRegistrationDate(Date registrationDate) {
+		this.registrationDate = registrationDate;
+	}
+
+	public WebUserRole getUserRole() {
+		return userRole;
+	}
+
+	public void setUserRole(WebUserRole userRole) {
+		this.userRole = userRole;
+	}
 }

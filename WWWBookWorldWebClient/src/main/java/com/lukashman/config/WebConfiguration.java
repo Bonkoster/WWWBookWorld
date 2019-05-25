@@ -9,9 +9,12 @@ import org.springframework.web.client.RestTemplate;
 public class WebConfiguration {
 	
 	@Bean
-	@LoadBalanced
 	public RestTemplate restTemplate() {
 		return new RestTemplate();
 	}
 
+	@Bean
+	public String dataBaseURL() {
+		return "http://localhost:8300/";
+	}
 }

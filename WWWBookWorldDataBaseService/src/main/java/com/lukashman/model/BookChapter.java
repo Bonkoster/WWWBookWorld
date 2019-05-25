@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Null;
 
 import org.hibernate.annotations.Proxy;
 
@@ -17,18 +19,23 @@ public class BookChapter {
 	@Id
 	@GeneratedValue( strategy = GenerationType.AUTO )
 	@Column( name = "book_chapter_id" )
+	@Null
 	private long id;
 	
 	@Column( name = "book_chapter_origin_id" )
+	@NotNull
 	private long originId;
 	
 	@Column( name = "book_chapter_title" )
+	@NotNull
 	private String title;
 	
 	@Column( name = "book_chapter_number" )
+	@NotNull
 	private int chapterNumber;
 	
 	@Column( name = "book_chapter_text" )
+	@NotNull
 	private String chapterText;
 	
 	public BookChapter() {

@@ -8,13 +8,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Null;
+import javax.validation.constraints.PastOrPresent;
 
 import org.hibernate.annotations.Proxy;
 
 import com.lukashman.model.additional.UserRole;
-
-import lombok.Getter;
-import lombok.Setter;
 
 @Entity
 @Table( name="user_table" )
@@ -24,21 +25,29 @@ public class User {
 	@Id
 	@GeneratedValue( strategy = GenerationType.AUTO )
 	@Column( name = "user_id" )
+	@Null
 	private int id;
 	
 	@Column( name = "user_name" )
+	@NotNull
 	private String name;
 	
 	@Column( name = "user_password" )
+	@NotNull
 	private String password;
 	
 	@Column( name = "user_email" )
+	@NotNull
+	@Email
 	private String email;
 	
 	@Column( name = "user_registration_date" )
+	@NotNull
+	@PastOrPresent
 	private Date registrationDate;
 	
 	@Column( name = "user_role" )
+	@NotNull
 	private UserRole userRole;
 
 	public User() {

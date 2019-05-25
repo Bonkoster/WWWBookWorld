@@ -8,11 +8,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Null;
+import javax.validation.constraints.PastOrPresent;
 
 import org.hibernate.annotations.Proxy;
-
-import lombok.Getter;
-import lombok.Setter;
 
 @Entity
 @Table( name="comment_table" )
@@ -22,18 +22,23 @@ public class Comment {
 	@Id
 	@GeneratedValue( strategy = GenerationType.AUTO )
 	@Column( name = "comment_id" )
+	@Null
 	private long id;
 	
 	@Column( name = "comment_book_id" )
 	private long bookId;
 	
 	@Column( name = "comment_author" )
+	@NotNull
 	private String author;
 	
 	@Column( name = "comment_date" )
+	@NotNull
+	@PastOrPresent
 	private Date postDate;
 	
 	@Column( name = "comment_text" )
+	@NotNull
 	private String text;
 
 	public Comment() {

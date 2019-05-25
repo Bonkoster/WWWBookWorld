@@ -2,26 +2,48 @@ package com.lukashman.model;
 
 import java.util.Date;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-@AllArgsConstructor
+@JsonIgnoreProperties("id")
 public class WebComment {
 
-	@Getter
-	@Setter
 	private long bookId;
 	
-	@Getter
-	@Setter
 	private String author;
 	
-	@Getter
-	@Setter
 	private Date postDate;
 	
-	@Getter
-	@Setter
 	private String text;
+
+	public long getBookId() {
+		return bookId;
+	}
+
+	public void setBookId(long bookId) {
+		this.bookId = bookId;
+	}
+
+	public String getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+
+	public Date getPostDate() {
+		return postDate;
+	}
+
+	public void setPostDate(Date postDate) {
+		this.postDate = postDate;
+	}
+
+	public String getText() {
+		return text;
+	}
+
+	public void setText(String text) {
+		this.text = text;
+	}
 }

@@ -1,26 +1,50 @@
 package com.lukashman.model;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-@AllArgsConstructor
+@JsonIgnoreProperties("id")
 public class WebBookChapter {
 
-	@Getter
-	@Setter
-	private Long originId;
+	private long originId;
 	
-	@Getter
-	@Setter
 	private String title;
 	
-	@Getter
-	@Setter
-	private Integer chapterNumber;
+	private int chapterNumber;
 	
-	@Getter
-	@Setter
 	private String chapterText;
+
+	public long getOriginId() {
+		return originId;
+	}
+
+	public void setOriginId(long originId) {
+		this.originId = originId;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public int getChapterNumber() {
+		return chapterNumber;
+	}
+
+	public void setChapterNumber(int chapterNumber) {
+		this.chapterNumber = chapterNumber;
+	}
+
+	public String getChapterText() {
+		return chapterText;
+	}
+
+	public void setChapterText(String chapterText) {
+		this.chapterText = chapterText;
+	}
+	
+	
 }

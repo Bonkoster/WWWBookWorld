@@ -10,7 +10,7 @@ import com.lukashman.model.BookChapter;
 @Repository
 public interface BookChapterRepository extends JpaRepository<BookChapter, Long> {
 
-	public List<BookChapter> findAllByOriginId ( final Long originId );
+	public List<BookChapter> findByOriginId ( final long originId );
 	
-	public List<BookChapter> deleteByOriginId ( final Long originId );
+	public List<BookChapter> deleteByOriginId ( final long originId );
 }
