@@ -6,3 +6,18 @@ a {
 html {
 	background: url('/images/kabinet_stol_knigi_globus_lampa_biblioteka_54332_3840x2400.jpg') no-repeat center center fixed;
 }
+
+body {
+	text-align: center;
+	margin: 0;
+}
+
+.main-container {
+	width: calc(100% - 250px);
+	height: 100%;
+	background-color: #000020;
+	color: white;
+	position: absolute;
+	right: 0;
+	transition: 0.5s;
+}
